@@ -26,7 +26,21 @@ def generate_paasword():
 
 
 # ---------------------------- FIND PASSWORD ------------------------------- #
-
+def search_data():
+    website_search=website_entry.get()
+    try:
+        with open("data.json", "r") as data_file:
+            data = json.load(data_file)
+            if website_search in data:
+                found_email=data[website_search]["email"]
+                found_pass = data[website_search]["password"]
+                messagebox.showinfo(title=website_search,message=f"Your email={found_email}\nYour password={found_pass}")
+            else:
+                messagebox.showinfo(title=website_search, message=f"No Data is Available")
+    except FileNotFoundError:
+        messagebox.showinfo(title=website_search, message="DataBase Not Found !")
+    finally:
+        website_entry.delete(0, END)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_password():
@@ -34,13 +48,29 @@ def save_password():
     password=password_entry.get()
     email=email_entry.get()
 
+    new_data={
+        web:{
+            "email":email,
+            "password":password,
+        }
+    }
+
     if len(web)==0 or len(password)==0:
         messagebox.showinfo(title="OOPS !",message="Please Fill the details.")
     else:
         is_ok=messagebox.askokcancel(title=web,message=f"These are the details: Email-{email} and Password-{password}.\n Is it ok to save?")
         if is_ok:
-            with open("data.txt","a") as file:
-                file.write(f"{web}  | {email} | {password}")
+            try:
+                with open("data.json","r") as data_file:
+                    data=json.load(data_file)
+            except FileNotFoundError:
+                with open("data.json","w") as data_file:
+                    json.dump(new_data,data_file , indent=4)
+            else:
+                data.update(new_data)
+                with open("data.json","w") as data_file:
+                    json.dump(data,data_file , indent=4)
+            finally:
                 website_entry.delete(0,END)
                 password_entry.delete(0,END)
 
@@ -60,9 +90,11 @@ canvas.grid(column=1,row=0)
 #Website
 websiteLabel=Label(text="Website:")
 websiteLabel.grid(column=0,row=1)
-website_entry=Entry(width=35)
+website_entry=Entry(width=19)
 website_entry.focus()
-website_entry.grid(column=1,row=1,columnspan=2,sticky="W")
+website_entry.grid(column=1,row=1,columnspan=1,sticky="W")
+search=Button(text="Search",width=13,command=search_data)
+search.grid(column=1,row=1,sticky="E")
 
 
 #Email/Username
@@ -74,15 +106,15 @@ email_entry.grid(column=1,row=2,columnspan=2,sticky="W")
 #Password
 passLabel=Label(text="Password:")
 passLabel.grid(column=0,row=3)
-password_entry=Entry(width=21)
+password_entry=Entry(width=19)
 password_entry.grid(column=1,row=3,sticky="W")
-generate=Button(text="Generate Password",width=14,command=generate_paasword)
+generate=Button(text="Generate Password",width=13,command=generate_paasword)
 generate.grid(column=1,row=3,sticky="E")
 
 
 
 #Add
-addData=Button(text="Add",width=35,command=save_password)
+addData=Button(text="Add",width=29,command=save_password)
 addData.grid(column=1,row=4,columnspan=2,sticky="W")
 
 

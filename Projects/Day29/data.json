@@ -1,10 +1,18 @@
 {
-    "Ebay": {
-        "email": "manish945@gmail.com",
-        "paasword": "EY)SH0*+I9"
-    },
     "Amazon": {
-        "email": "manish9342@gmail.com",
-        "paasword": "Izd24i3(Q&("
+        "email": "manish@gmail.com",
+        "password": "2)(k&QLgd6("
+    },
+    "Ebay": {
+        "email": "manish@gmail.com",
+        "password": "8gj!+1q!*U4F9"
+    },
+    "Meta": {
+        "email": "manish@gmail.com",
+        "password": "+Z66!g!RN2p"
+    },
+    "Instagram": {
+        "email": "manish@gmail.com",
+        "password": "i%g2$La0A"
     }
 }
