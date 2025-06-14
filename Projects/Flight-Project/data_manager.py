@@ -13,9 +13,11 @@ class DataManager:
         self._user=os.environ['SHEET_USERNAME']
         print(self._user)
         self._password=os.environ['SHEET_PASSWORD']
+        self.users_endpoint = os.environ["SHEETY_USERS_ENDPOINT"]
         print(self._password)
         self._author=HTTPBasicAuth(self._user,self._password)
         self.sheet={}
+        self.customer_data = {}
 
     def get_data(self):
         response=requests.get(url=SHEET_ENDPOINT,auth=self._author)
@@ -32,3 +34,9 @@ class DataManager:
             }
             response=requests.put(url=f"{SHEET_ENDPOINT}/{row["id"]}",json=body,auth=self._author)
             response.raise_for_status()
+
+    def get_customer_emails(self):
+        response = requests.get(url=self.users_endpoint)
+        data = response.json()
+        self.customer_data = data["users"]
+        return self.customer_data
