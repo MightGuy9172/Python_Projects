@@ -1,0 +1,13 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Environment file (contains secrets like Gmail App Password)
+.env
+
+# Node.js dependencies
+node_modules/
+
+# Editor and OS-specific junk
+.DS_Store
+Thumbs.db

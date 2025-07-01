@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Coffee and Wifi{% endblock %}
+
+{% block content %}
+<div class="bg-gray-800 text-white w-dvw h-dvh p-10">
+    <div class="flex-col justify-center items-center w-full">
+  <h1 class="text-4xl font-bold text-center">☕️ Coffee & Wifi 💻</h1>
+  <p class="text-2xl font-mono text-center mt-5">Want to work in a cafe but need power and wifi?</p>
+  <hr class="my-4">
+  <p class="text-2xl font-mono text-center">You've found the right place! Checkout my collection of cafes with data on power socket availability, wifi speed and coffee quality.</p>
+  <a class="block font-bold text-2xl mx-auto mt-4 bg-amber-300 w-max p-3 m-4 rounded-2xl hover:text-amber-300 hover:bg-white" href="{{ url_for('cafes') }}" role="button">Show Me!</a>
+</div>
+    </div>
+
+{% endblock %}
