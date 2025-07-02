@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action="" method="POST" novalidate class="space-y-4 max-w-md mx-auto mt-10">
+  {{ form.hidden_tag() }}
+
+  <div>
+    {{ form.title.label(class="font-medium") }}
+    {{ form.title(class="block w-full ring-1 rounded mt-2 px-3 py-1 bg-white text-black") }}
+    {% for error in form.title.errors %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+    {% endfor %}
+  </div>
+
+  <div>
+    {{ form.author.label(class="font-medium") }}
+    {{ form.author(class="block w-full ring-1 rounded mt-2 px-3 py-1 bg-white text-black") }}
+    {% for error in form.author.errors %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+    {% endfor %}
+  </div>
+
+  <div>
+    {{ form.rating.label(class="font-medium") }}
+    {{ form.rating(class="block w-full ring-1 rounded mt-2 px-3 py-1 bg-white text-black") }}
+    {% for error in form.rating.errors %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+    {% endfor %}
+  </div>
+
+  <div>
+    {{ form.submit(class="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded") }}
+  </div>
+</form>
+
+ {% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+     <form action="{{ url_for('edit') }}" method="POST" novalidate class="m-10">
+        <p class="p-2 mx-3 font-mono text-2xl">Book Name: {{book.title}}</p>
+        <p class="p-2 mx-3 font-mono text-2xl">Current Rating: {{book.rating}}</p>
+         <input hidden="hidden" name="id" value="{{book.id}}">
+        <input name="rating" type="text" placeholder="New Rating (1 to 10)" class="ml-5 max-w-100 ring-1 rounded mt-2 px-3 py-1 bg-white text-black">
+        <button type="submit" class="p-1 mt-2 rounded text-1xl bg-blue-500 hover:bg-blue-600 hover:text-white">Change Rating</button>
+    </form>
+{% endblock %}

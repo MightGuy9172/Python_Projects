@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center p-10">
+    <h1 class="text-5xl uppercase font-bold">My Library</h1>
+    <ul class="my-8 flex-row justify-center items-center">
+      {% if all_books %}
+      {%for book in all_books %}
+      <li class="flex text-xl uppercase my-5">
+        <span class="p-2 mx-3 font-mono text-2xl">{{ book.title }}</span>
+         <span class="p-2 mx-3 font-mono text-2xl">{{ book.author }}</span>
+         <span class="p-2 mr-3 font-mono text-2xl ml-6">{{ book.rating }}/10</span>
+        <a href="{{ url_for('edit', id=book.id) }}" class="bg-green-400 p-2 rounded mx-3 hover:text-white">Edit Rating</a>
+        <a href="{{ url_for('delete', id=book.id) }}" class="bg-red-400 text-blue-800 p-2 rounded mx-3 hover:text-white">Delete</a>
+      </li>
+      {% endfor %}
+      {% else %}
+      <h3 class="text-3xl font-semibold">Library is Empty</h3>
+      {% endif %}
+    </ul>
+
+    <a href="{{ url_for('add') }}" class="p-3 rounded-3xl text-1xl bg-blue-500 hover:bg-blue-600 hover:text-white">Add New Book</a>
+    </div>
+{% endblock %}
