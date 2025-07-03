@@ -1,0 +1,23 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore Flask DB file in instance folder
+instance/books-collection.db
+
+# Ignore Tailwind generated CSS output
+static/output.css
+
+# Ignore node_modules (installed packages)
+node_modules/
+
+# Ignore editor/IDE specific files
+.vscode/
+.idea/
+
+# Ignore system files
+.DS_Store
+
+# Ignore environment/secret files (if you add any)
+.env

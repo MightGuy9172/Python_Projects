@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}My Top Movies{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-100 py-10 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-4xl font-bold text-center mb-2">My Top 10 Movies</h1>
+    <p class="text-center text-gray-600 mb-10">These are my all-time favourite movies.</p>
+
+    <!-- Grid container -->
+    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      {% for movie in all_movies %}
+      <!-- Movie Card -->
+      <div class="relative group h-96 [perspective:1000px]">
+        <div class="relative w-full h-full duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+
+          <!-- Front -->
+          <div class="absolute w-full h-full rounded-xl overflow-hidden shadow-lg bg-cover bg-center [backface-visibility:hidden]"
+               style="background-image: url('{{ movie.img_url }}')">
+            <p class="absolute bottom-4 right-4 text-white text-5xl font-bold bg-black bg-opacity-50 px-4 py-2 rounded-full">{{ movie.ranking }}</p>
+          </div>
+
+          <!-- Back -->
+          <div class="absolute w-full h-full bg-white rounded-xl px-6 py-4 shadow-lg flex flex-col justify-between [transform:rotateY(180deg)] [backface-visibility:hidden]">
+            <div>
+              <h2 class="text-2xl font-bold mb-2">{{ movie.title }} <span class="text-gray-500 text-sm">({{ movie.year }})</span></h2>
+              <div class="flex items-center gap-2 mb-2 text-yellow-500">
+                <span class="text-lg font-semibold">{{ movie.rating }}</span>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="italic text-gray-600 mb-2">"{{ movie.review }}"</p>
+              <p class="text-gray-700 text-sm">{{ movie.description }}</p>
+            </div>
+            <div class="flex justify-between mt-4">
+              <a href="{{ url_for('update', movie_id=movie.id) }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm">Update</a>
+              <a href="{{ url_for('delete', movie_id=movie.id) }}" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm">Delete</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Add Movie Button -->
+    <div class="text-center mt-10">
+      <a href="{{ url_for('add') }}" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full text-lg shadow-md">Add Movie</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

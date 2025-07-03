@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Edit Movies{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-100 flex items-center justify-center py-10 px-4">
+  <div class="w-full max-w-xl bg-white p-8 rounded-2xl shadow-xl">
+    <h1 class="text-3xl font-bold text-center mb-2">{{ movie.title }}</h1>
+    <p class="text-center text-gray-600 mb-6">Update movie rating & review</p>
+
+    <form method="POST" class="space-y-6">
+      {{ form.hidden_tag() }}
+
+      <!-- Rating -->
+      <div>
+        {{ form.rating.label(class_='block text-sm font-medium text-gray-700') }}
+        {{ form.rating(class_='mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200') }}
+        {% for error in form.rating.errors %}
+          <p class="text-red-500 text-sm mt-1">{{ error }}</p>
+        {% endfor %}
+      </div>
+
+      <!-- Review -->
+      <div>
+        {{ form.review.label(class_='block text-sm font-medium text-gray-700') }}
+        {{ form.review(class_='mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200') }}
+        {% for error in form.review.errors %}
+          <p class="text-red-500 text-sm mt-1">{{ error }}</p>
+        {% endfor %}
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        {{ form.submit(class_='bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md shadow') }}
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
