@@ -1,0 +1,36 @@
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header class="masthead bg-cover bg-center py-24 text-white" style="background-image: url('{{ post.img_url }}')">
+    <div class="container mx-auto px-4 lg:px-5">
+        <div class="flex justify-center">
+            <div class="w-full max-w-3xl text-center">
+                <div class="post-heading">
+                    <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-white">{{ post.title }}</h1>
+                    <h2 class="subheading text-xl sm:text-2xl italic text-white mb-2">{{ post.subtitle }}</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article class="mb-16 mt-10">
+    <div class="container mx-auto px-4 lg:px-5">
+        <div class="flex justify-center">
+            <div class="w-full max-w-3xl text-lg leading-relaxed text-gray-800 prose prose-lg prose-blue dark:prose-invert">
+                {{ post.body | safe }}
+            </div>
+        </div>
+    </div>
+
+</article>
+
+<div class="flex justify-center">
+    <a class="inline-block bg-green-600 text-white uppercase text-sm font-semibold py-2 px-4 rounded hover:bg-green-700 transition duration-300" href="{{ url_for('edit_post', index=post.id) }}">
+                    Edit Posts →
+    </a>
+            </div>
+
+{% include "footer.html" %}
