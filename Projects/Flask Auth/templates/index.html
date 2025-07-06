@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] flex flex-col items-center justify-center space-y-4">
+  <h1 class="text-white text-center text-2xl font-semibold tracking-wide drop-shadow-md">
+    Flask Authentication
+  </h1>
+
+  <!-- TODO: Hide the Login/Registration buttons for logged-in users -->
+   {% if not logged_in: %}
+  <a href="{{ url_for('login') }}"
+     class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 rounded shadow-md transition">
+    Login
+  </a>
+
+  <a href="{{ url_for('register') }}"
+     class="w-full bg-gray-300 hover:bg-gray-400 text-gray-900 text-sm py-2 rounded shadow-md transition">
+    Register
+  </a>
+  {% else %}
+  <p> You are already Logged In ! </p>
+  {% endif %}
+</div>
+
+{% endblock %}

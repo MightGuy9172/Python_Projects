@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] flex flex-col items-center justify-center">
+  <h1 class="text-white text-2xl font-semibold text-center tracking-wide drop-shadow-md mb-6">
+    Register
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+         <p class="text-xl text-red-700 w-full">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </h1>
+
+
+  <form action="{{ url_for('register') }}" method="post" class="w-full space-y-3" novalidate>
+    <input
+      type="text"
+      name="name"
+      placeholder="Name"
+      required
+      class="w-full bg-black/30 text-white text-sm py-2 px-3 rounded border border-black/30 shadow-inner focus:outline-none focus:shadow-black/40 transition"
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      required
+      class="w-full bg-black/30 text-white text-sm py-2 px-3 rounded border border-black/30 shadow-inner focus:outline-none focus:shadow-black/40 transition"
+    />
+    <input
+      type="password"
+      name="password"
+      placeholder="Password"
+      required
+      class="w-full bg-black/30 text-white text-sm py-2 px-3 rounded border border-black/30 shadow-inner focus:outline-none focus:shadow-black/40 transition"
+    />
+    <button
+      type="submit"
+      class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 rounded shadow-md transition">
+      Sign me up.
+    </button>
+  </form>
+</div>
+
+{% endblock %}
