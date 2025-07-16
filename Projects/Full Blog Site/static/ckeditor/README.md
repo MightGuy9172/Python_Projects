@@ -1,39 +1,46 @@
-CKEditor 4
-==========
+"Moono-lisa" Skin
+=================
+
+This skin has been made a **default skin** starting from CKEditor 4.6.0 and is maintained by the core developers.
+
+For more information about skins, please check the [CKEditor Skin SDK](https://ckeditor.com/docs/ckeditor4/latest/guide/skin_sdk_intro.html)
+documentation.
+
+Features
+-------------------
+"Moono-lisa" is a monochromatic skin, which offers a modern, flat and minimalistic look which blends very well in modern design.
+It comes with the following features:
+
+- Chameleon feature with brightness.
+- High-contrast compatibility.
+- Graphics source provided in SVG.
+
+Directory Structure
+-------------------
+
+CSS parts:
+- **editor.css**: the main CSS file. It's simply loading several other files, for easier maintenance,
+- **mainui.css**: the file contains styles of entire editor outline structures,
+- **toolbar.css**: the file contains styles of the editor toolbar space (top),
+- **richcombo.css**: the file contains styles of the rich combo ui elements on toolbar,
+- **panel.css**: the file contains styles of the rich combo drop-down, it's not loaded
+until the first panel open up,
+- **elementspath.css**: the file contains styles of the editor elements path bar (bottom),
+- **menu.css**: the file contains styles of all editor menus including context menu and button drop-down,
+it's not loaded until the first menu open up,
+- **dialog.css**: the CSS files for the dialog UI, it's not loaded until the first dialog open,
+- **reset.css**: the file defines the basis of style resets among all editor UI spaces,
+- **preset.css**: the file defines the default styles of some UI elements reflecting the skin preference,
+- **editor_XYZ.css** and **dialog_XYZ.css**: browser specific CSS hacks.
+
+Other parts:
+- **skin.js**: the only JavaScript part of the skin that registers the skin, its browser specific files and its icons and defines the Chameleon feature,
+- **images/**: contains a fill general used images,
+- **dev/**: contains SVG and PNG source of the skin icons.
+
+License
+-------
 
 Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
-https://ckeditor.com - See https://ckeditor.com/legal/ckeditor-oss-license for license information.
 
-CKEditor 4 is a text editor to be used inside web pages. It's not a replacement
-for desktop text editors like Word or OpenOffice, but a component to be used as
-part of web applications and websites.
-
-## Documentation
-
-The full editor documentation is available online at the following address:
-https://ckeditor.com/docs/
-
-## Installation
-
-Installing CKEditor is an easy task. Just follow these simple steps:
-
- 1. **Download** the latest version from the CKEditor website:
-    https://ckeditor.com. You should have already completed this step, but be
-    sure you have the very latest version.
- 2. **Extract** (decompress) the downloaded file into the root of your website.
-
-**Note:** CKEditor is by default installed in the `ckeditor` folder. You can
-place the files in whichever you want though.
-
-## Checking Your Installation
-
-The editor comes with a few sample pages that can be used to verify that
-installation proceeded properly. Take a look at the `samples` directory.
-
-To test your installation, just call the following page at your website:
-
-	http://<your site>/<CKEditor installation path>/samples/index.html
-
-For example:
-
-	http://www.example.com/ckeditor/samples/index.html
+CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
