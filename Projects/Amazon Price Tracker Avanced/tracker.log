@@ -1,0 +1,60 @@
+2025-11-15 18:29:30,226 - INFO - generated new fontManager
+2025-11-15 18:29:30,450 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-15 18:29:30,450 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-15 18:29:30,451 - INFO -  * Restarting with stat
+2025-11-15 18:29:36,230 - WARNING -  * Debugger is active!
+2025-11-15 18:29:36,233 - INFO -  * Debugger PIN: 576-181-024
+2025-11-15 18:30:10,593 - INFO - 127.0.0.1 - - [15/Nov/2025 18:30:10] "GET / HTTP/1.1" 200 -
+2025-11-15 18:30:10,703 - INFO - 127.0.0.1 - - [15/Nov/2025 18:30:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-15 18:30:13,403 - INFO - 127.0.0.1 - - [15/Nov/2025 18:30:13] "GET /plot?id=1 HTTP/1.1" 200 -
+2025-11-15 18:35:53,311 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-15 18:35:53,312 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-15 18:35:53,312 - INFO -  * Restarting with stat
+2025-11-15 18:35:59,029 - WARNING -  * Debugger is active!
+2025-11-15 18:35:59,032 - INFO -  * Debugger PIN: 576-181-024
+2025-11-15 18:36:14,175 - INFO - 127.0.0.1 - - [15/Nov/2025 18:36:14] "GET /plot?id=1 HTTP/1.1" 200 -
+2025-11-15 18:36:17,263 - INFO - 127.0.0.1 - - [15/Nov/2025 18:36:17] "GET / HTTP/1.1" 200 -
+2025-11-15 18:36:18,971 - INFO - 127.0.0.1 - - [15/Nov/2025 18:36:18] "GET / HTTP/1.1" 200 -
+2025-11-15 18:36:20,172 - INFO - 127.0.0.1 - - [15/Nov/2025 18:36:20] "GET /plot?id=1 HTTP/1.1" 200 -
+2025-11-15 18:37:57,342 - INFO -  * Detected change in 'C:\\Users\\manis\\Desktop\\Python_Projects\\Projects\\Amazon Price Tracker Avanced\\main.py', reloading
+2025-11-15 18:37:58,538 - INFO -  * Restarting with stat
+2025-11-15 18:40:32,039 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-15 18:40:32,039 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-15 18:40:32,040 - INFO -  * Restarting with stat
+2025-11-15 18:40:37,691 - WARNING -  * Debugger is active!
+2025-11-15 18:40:37,694 - INFO -  * Debugger PIN: 576-181-024
+2025-11-15 18:44:49,136 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-15 18:44:49,136 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-15 18:44:49,137 - INFO -  * Restarting with stat
+2025-11-15 18:44:54,743 - WARNING -  * Debugger is active!
+2025-11-15 18:44:54,746 - INFO -  * Debugger PIN: 576-181-024
+2025-11-15 18:44:56,942 - INFO - 127.0.0.1 - - [15/Nov/2025 18:44:56] "GET / HTTP/1.1" 200 -
+2025-11-15 18:45:07,342 - INFO - 127.0.0.1 - - [15/Nov/2025 18:45:07] "GET /plot?id=1 HTTP/1.1" 200 -
+2025-11-15 18:46:43,460 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-15 18:46:43,460 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-15 18:46:43,461 - INFO -  * Restarting with stat
+2025-11-15 18:46:49,168 - WARNING -  * Debugger is active!
+2025-11-15 18:46:49,171 - INFO -  * Debugger PIN: 576-181-024
+2025-11-15 18:49:42,324 - INFO - Checked Nothing Phone (3a) Black 128GB 8GB RAM: \u20b922750.0
+2025-11-15 18:49:46,041 - INFO - Email sent successfully.
+2025-11-15 18:49:48,499 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-15 18:49:48,499 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-15 18:49:48,500 - INFO -  * Restarting with stat
+2025-11-15 18:49:51,763 - INFO - Checked Nothing Phone (3a) Black 128GB 8GB RAM: \u20b922750.0
+2025-11-15 18:49:55,375 - INFO - Email sent successfully.
+2025-11-15 18:49:57,845 - WARNING -  * Debugger is active!
+2025-11-15 18:49:57,848 - INFO -  * Debugger PIN: 576-181-024
+2025-11-15 18:58:42,342 - INFO - Checked Nothing Phone (3a) Black 128GB 8GB RAM: \u20b922750.0
+2025-11-15 18:58:46,081 - INFO - Email sent successfully.
+2025-11-15 18:58:50,627 - INFO - Checked HP 15, 13th Gen Intel Core i3-1315U (12GB DDR4, 512GB SSD) FHD, Anti-Glare, Micro-Edge, 15.6''/39.6cm, Win11, M365 Basic(1yr)* Office24, Silver, 1.59kg, fd0573TU, FHD Camera w/Shutter Laptop: \u20b937990.0
+2025-11-15 18:58:54,448 - INFO - Email sent successfully.
+2025-11-15 18:58:58,895 - INFO - Checked Anime Figurine, Anime, Action Figure Toys Special Edition for Car Dashboard Decoration Cake Office Desk & Study Table (Pack of 1): \u20b9899.0
+2025-11-15 18:59:02,570 - INFO - Email sent successfully.
+2025-11-15 18:59:06,904 - INFO - Checked Anime Motivational Poster A4 Pack of 6 Perfect Wall Decoration in Offices, Bedrooms, Hostels, Study & Living room, Featuring Quotes, 300 GSM, Aesthetic Designs, and Positive Vibes: \u20b9299.0
+2025-11-15 18:59:10,701 - INFO - Email sent successfully.
