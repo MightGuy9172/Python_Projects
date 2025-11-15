@@ -1,79 +1,118 @@
 # Amazon Price Tracker
 
-Amazon Price Tracker is a Python script that monitors the price of a specified Amazon product and sends you an email notification when the price drops below your desired threshold.
+The **Amazon Price Tracker** is a Python-based application designed to monitor the price of Amazon products and notify users via email when the price drops below a specified threshold. This tool helps users save money by keeping track of product price fluctuations automatically.
 
-## Features
+---
 
-- Scrapes product name and current price from any Amazon product page.
-- Sends an email alert when the price falls below your target value.
-- Uses environment variables to securely store email credentials and product details.
-- Easy configuration via a `.env` file.
-- Simple, lightweight, and customizable.
+## **Features**
 
-## Requirements
+* Scrapes the product name and current price from Amazon product pages.
+* Sends automated email notifications when prices drop below a user-defined threshold.
+* Securely stores email credentials and product information using environment variables.
+* Allows multiple products to be tracked through a JSON configuration file.
+* Includes a visual **price history dashboard** using **Matplotlib** and **Flask**.
+* Lightweight, customizable, and easy to set up.
 
-- Python 3.x
-- [requests](https://pypi.org/project/requests/)
-- [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
-- [python-dotenv](https://pypi.org/project/python-dotenv/)
+---
 
-## Setup
+## **Requirements**
 
-1. **Clone this repository:**
+* **Python 3.x**
+* **Libraries:**
 
-   ```sh
+  * [requests](https://pypi.org/project/requests/)
+  * [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
+  * [python-dotenv](https://pypi.org/project/python-dotenv/)
+  * **Flask**
+  * **Matplotlib**
+  * **Pillow**
+
+---
+
+## **Setup Instructions**
+
+1. **Clone the repository:**
+
+   ```bash
    git clone https://github.com/yourusername/amazon-price-tracker.git
    cd amazon-price-tracker
    ```
 
 2. **Install dependencies:**
 
-   ```sh
-   pip install requests beautifulsoup4 python-dotenv
+   ```bash
+   pip install -r requirements.txt
    ```
 
 3. **Configure environment variables:**
 
-   - Copy `.env.example` to `.env`:
-     ```sh
+   * Copy `.env.example` to `.env`:
+
+     ```bash
      copy .env.example .env
      ```
-   - Edit `.env` and set the following variables:
+   * Edit `.env` and provide your credentials:
+
      ```
-     PRODUCT_URL=https://www.amazon.in/dp/your_product_id
-     TARGET_PRICE=999.99
      EMAIL=your_email@gmail.com
-     EMAIL_PASS=your_email_password
-     RECIPIENT_EMAIL=recipient_email@gmail.com
+     PASS=your_email_password
      ```
 
-4. **Run the script:**
-   ```sh
-   python amazon_price_tracker.py
+4. **Configure products:**
+
+   * Open `products.json` and add products with their URLs, price thresholds, and recipient emails:
+
+     ```json
+     [
+       {
+         "url": "https://amzn.in/d/fhxDxLG",
+         "threshold": 800,
+         "email": "recipient_email@gmail.com"
+       }
+     ]
+     ```
+
+5. **Run the tracker:**
+
+   ```bash
+   python tracker.py
    ```
 
-## Usage
+6. **View price history dashboard (optional):**
 
-- The script will fetch the product name and price from the URL specified in your `.env` file.
-- If the current price is less than or equal to your `TARGET_PRICE`, you will receive an email notification.
-- You can schedule this script to run periodically using Task Scheduler (Windows) or cron (Linux/Mac).
+   ```bash
+   python dashboard.py
+   ```
 
-## Example `.env` file
+   * Open `http://127.0.0.1:5000/` in a browser to see tracked products and price trends.
 
-```
-PRODUCT_URL=https://www.amazon.in/dp/B09XYZ1234
-TARGET_PRICE=1500.00
-EMAIL=your_email@gmail.com
-EMAIL_PASS=your_email_password
-RECIPIENT_EMAIL=recipient_email@gmail.com
-```
+---
 
-## Notes
+## **How It Works**
 
-- Make sure your email provider allows access from less secure apps or set up an app password if using Gmail.
-- Amazon may block requests if too many are made in a short period. Use responsibly.
-- For best results, use the script with products available in your region.
+1. The script fetches product pages from Amazon using **Requests** and parses HTML with **BeautifulSoup**.
+2. Product price and title are extracted and stored in an **SQLite** database.
+3. The script compares the current price with the defined threshold.
+4. If the price is below the threshold, an automated email is sent using **SMTP**.
+5. All product prices are logged, and the **Flask** dashboard can visualize price history with **Matplotlib**.
 
-## License
+---
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## **Usage Notes**
+
+* Ensure your email provider allows SMTP access or use an **app-specific password** for Gmail.
+* Avoid sending too many requests in a short time to prevent being blocked by Amazon.
+* The tracker works best with Amazon product URLs from your specific region.
+
+---
+
+## **Security Tips**
+
+* Do **not hardcode passwords** in your scripts. Always use `.env` for sensitive credentials.
+* Keep your `.env` file secure and add it to `.gitignore`.
+
+---
+
+## **License**
+
+This project is licensed under the MIT License.
